@@ -1,28 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
+    <!-- 画像 -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/your_image"
+        app:layout_anchor="@id/bottomAppBar"
+        app:layout_anchorGravity="start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        />
 
+    <!-- テキスト -->
 
+    <!-- 再生ボタン -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Your Text"
+        app:layout_anchor="@id/bottomAppBar"
+        app:layout_anchorGravity="start" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="再生"
+        app:layout_anchor="@id/bottomAppBar"
+        app:layout_anchorGravity="end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        />
+
+    <!-- BottomAppBar -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabCradleMargin="8dp"
+        app:fabCradleRoundedCornerRadius="12dp"
+        app:hideOnScroll="true"
+        app:theme="@style/Widget.Material3.BottomAppBar"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        />
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bottomAppBar"
-            style="@style/Widget.Material3.BottomAppBar"
-            android:layout_gravity="bottom"
-
-
-            tools:ignore="BottomAppBar" />
-    </LinearLayout>
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
