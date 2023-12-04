@@ -38,6 +38,7 @@
             style="@style/Widget.Cat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:filterTouchesWhenObscured="false"
             android:onClick="onConnectClicked"
             android:text="connect" />
@@ -47,6 +48,7 @@
             style="@style/Widget.Cat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:filterTouchesWhenObscured="false"
             android:lines="1"
             android:onClick="onDisconnectClicked"
