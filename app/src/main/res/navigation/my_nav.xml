@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/my_nav">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/over_Fragment">
+    <fragment
+        android:id="@+id/over_Fragment"
+        android:name="jp.ac.cm0107.road_to_music.over_Fragment"
+        android:label="over_Fragment" >
+        <action
+            android:id="@+id/action_over_Fragment_to_audio_player_Fragment"
+            app:destination="@id/audio_player_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audio_player_Fragment"
+        android:name="jp.ac.cm0107.road_to_music.audio_player_Fragment"
+        android:label="audio_player_Fragment" />
 </navigation>

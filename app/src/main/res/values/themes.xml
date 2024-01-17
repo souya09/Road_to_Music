@@ -26,11 +26,11 @@
         <item name="colorOutline">@color/md_theme_light_outline</item>
         <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
-        <item name="colorCustomColor1">#9d4041</item>
-        <item name="colorOnCustomColor1">#ffffff</item>
-        <item name="colorCustomColor1Container">#ffdad8</item>
-        <item name="colorOnCustomColor1Container">#410007</item>
-        <item name="harmonizeCustomColor1">false</item>
+<!--        <item name="colorCustomColor1">#9d4041</item>-->
+<!--        <item name="colorOnCustomColor1">#ffffff</item>-->
+<!--        <item name="colorCustomColor1Container">#ffdad8</item>-->
+<!--        <item name="colorOnCustomColor1Container">#410007</item>-->
+<!--        <item name="harmonizeCustomColor1">false</item>-->
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
     </style>
 

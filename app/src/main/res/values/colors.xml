@@ -65,4 +65,9 @@
     <color name="md_theme_dark_outlineVariant">#414941</color>
     <color name="md_theme_dark_scrim">#000000</color>
     <color name="CustomColor1">#CE6565</color>
+    <color name="cat_text_link">#acacac</color>
+    <color name="cat_button_text_disabled">#cacaca</color>
+    <color name="cat_button_text_pressed">#919191</color>
+    <color name="cat_button_text_focused">#727272</color>
+    <color name="cat_button_text_default">#191919</color>
 </resources>

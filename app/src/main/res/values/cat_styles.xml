@@ -18,7 +18,6 @@
         <item name="android:ellipsize">end</item>
         <item name="android:gravity">center</item>
         <item name="android:textAppearance">@style/TextAppearance.Cat.Button</item>
-        <item name="android:minHeight">@dimen/cat_button_height</item>
     </style>
 
     <style name="Widget.Cat.Button.Small">
@@ -27,8 +26,6 @@
         <item name="android:textSize">10sp</item>
         <item name="android:paddingTop">4dp</item>
         <item name="android:paddingBottom">4dp</item>
-        <item name="android:background">@drawable/cat_button_small</item>
-        <item name="android:minHeight">@dimen/cat_button_small_height</item>
     </style>
 
 </resources>
