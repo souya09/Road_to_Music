@@ -15,6 +15,9 @@
         <activity
             android:name=".SettingActivity"
             android:exported="false" />
+        <activity android:name=".RemotePlayerActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".MainOverActivity"
             android:exported="false" />

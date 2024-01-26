@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/window_background"
-    tools:context=".MainActivity">
+    tools:context=".AudioPlayerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,32 +28,7 @@
     </LinearLayout>
 
     <!-- Album Art -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/connect_button"
-            style="@style/Widget.Cat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:filterTouchesWhenObscured="false"
-            android:onClick="onConnectClicked"
-            android:text="connect" />
-
-        <Button
-            android:id="@+id/disconnect_button"
-            style="@style/Widget.Cat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:filterTouchesWhenObscured="false"
-            android:lines="1"
-            android:onClick="onDisconnectClicked"
-            android:text="disconnect" />
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/albumArtImageView"
@@ -70,15 +45,6 @@
         android:padding="16dp"
         android:text="Song Title"
         android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/artistTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="Artist Name"
-        android:textSize="14sp" />
 
     <!-- SeekBar -->
     <SeekBar
@@ -112,5 +78,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_skip_next" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/connect_button"
+            style="@style/Widget.Cat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:filterTouchesWhenObscured="false"
+            android:onClick="connection"
+            android:text="connect" />
+
+        <Button
+            android:id="@+id/disconnect_button"
+            style="@style/Widget.Cat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:filterTouchesWhenObscured="false"
+            android:lines="1"
+            android:onClick="disconnection"
+            android:text="disconnect" />
     </LinearLayout>
 </LinearLayout>

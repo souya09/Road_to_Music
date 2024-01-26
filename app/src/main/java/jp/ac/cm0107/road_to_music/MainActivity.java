@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn_NewPlay;
     private Button btn_test;
+    private Button btn_test2;
 
 
 
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         btn_NewPlay = (Button) findViewById(R.id.btn_NewPlay);
         btn_test = (Button) findViewById(R.id.testbtn);
+        btn_test2 = findViewById(R.id.testbtn2);
+
+
 
         //Spotifyに接続
         ConnectionParams connectionParams =
@@ -58,12 +62,12 @@ public class MainActivity extends AppCompatActivity {
 
         btn_NewPlay.setOnClickListener(new newPlayList());
         btn_test.setOnClickListener(new test());
+        btn_test2.setOnClickListener(new test2());
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
     }
 
     @Override
@@ -77,11 +81,17 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Conect", "Connected! Yay!");
     }
 
+
+
+
     private class newPlayList implements View.OnClickListener {
         @Override
         public void onClick(View view) {
+
+
+
             // Play a playlist
-                mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:6wB8g69q7vwUj0fFC4c2D2");
+                mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:39ySv5eMgKlEarDh8Ej6cJ?si=70dab7ed97c146c4");
 
             // Subscribe to PlayerState
             mSpotifyAppRemote.getPlayerApi()
@@ -99,9 +109,20 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+            //Intent intent = new Intent(MainActivity.this, RemotePlayerActivity.class);
             Intent intent = new Intent(MainActivity.this, AudioPlayerActivity.class);
             startActivity(intent);
         }
     }
 
+    private class test2 implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+
+
+
+        }
+    }
+
 }
+
