@@ -15,33 +15,30 @@
         android:layout_marginTop="32dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtWeatherView"
+        <androidx.appcompat.widget.AppCompatSpinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="34sp" />
+            android:layout_height="48dp"
+            android:id="@+id/weatherSpnView"
 
-        <TextView
-            android:id="@+id/txtTemperatureView"
+        />
+        <androidx.appcompat.widget.AppCompatSpinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="34sp" />
+            android:layout_height="48dp"
+            android:id="@+id/temperaturerSpnView"
 
-        <TextView
-            android:id="@+id/txtSituationView"
+            />
+        <androidx.appcompat.widget.AppCompatSpinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="34sp" />
+            android:layout_height="48dp"
+            android:id="@+id/situationSpnView"
 
-        <TextView
-            android:id="@+id/txtTimeView"
+            />
+        <androidx.appcompat.widget.AppCompatSpinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="34sp" />
+            android:layout_height="48dp"
+            android:id="@+id/timeSpnView"
+
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -57,14 +54,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Category" />
 
         <Button
             android:id="@+id/btn_Advanced"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Advanced" />
     </LinearLayout>
 
     <Button
@@ -72,23 +69,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Button" />
+        android:text="List" />
 
     <Button
         android:id="@+id/btn_NewPlay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Button" />
+        android:text="NewPlay!" />
 
     <Button
         android:id="@+id/testbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Player" />
     <Button
         android:id="@+id/testbtn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Connect" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+            <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_Audio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:name="jp.ac.cm0107.road_to_music.AudioFragment" />
+    </LinearLayout>
 </LinearLayout>

@@ -2,6 +2,7 @@ package jp.ac.cm0107.road_to_music;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,6 +40,7 @@ public class AudioPlayerActivity extends AppCompatActivity {
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private TextView songTitleText;
     private ImageView albumArtImage;
+    private ImageButton backImgButton;
     private ImageButton playPauseButton;
     private ImageButton nextButton;
     private ImageButton prevButton;
@@ -49,6 +52,8 @@ public class AudioPlayerActivity extends AppCompatActivity {
     Subscription<PlayerState> mPlayerStateSubscription;
     Subscription<PlayerContext> mPlayerContextSubscription;
     Subscription<Capabilities> mCapabilitiesSubscription;
+    private OnBackPressedCallback mBackButtonCallback;
+    private Intent backIntent;
 
     private void showDialog(String title, String message) {
         new AlertDialog.Builder(this).setTitle(title).setMessage(message).create().show();
@@ -78,7 +83,7 @@ public class AudioPlayerActivity extends AppCompatActivity {
                         songTitleText.setTag(playerState);
 //                        Log.d("playerState log", "onEvent: "+playerState);
                     }
-                    Log.d(TAG, "onEvent: "+playerState.track );
+                    Log.d(TAG, "onEvent: " + playerState.track );
                     if (playerState.track != null) {
                         if (playerState.playbackSpeed > 0) {
                             mTrackProgressBar.unpause();
@@ -103,10 +108,30 @@ public class AudioPlayerActivity extends AppCompatActivity {
                     mSeekBar.setEnabled(true);
                 }
             };
+
+    @Override
+    public void finish() {
+        super.finish();
+        backIntent = new Intent();
+        setResult(RESULT_CANCELED, backIntent);
+        overridePendingTransition(R.anim.in_up,R.anim.out_down);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_player);
+        mBackButtonCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // バックボタンが押された際の処理?
+                Log.d(TAG, "handleOnBackPressed: ");
+                finish();
+            }
+        };
+        getOnBackPressedDispatcher().
+                addCallback(this,mBackButtonCallback);
+
 
         playPauseButton = (ImageButton) findViewById(R.id.playPauseButton);
         playPauseButton.setOnClickListener(new PlayPause());
@@ -114,10 +139,13 @@ public class AudioPlayerActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new nextBtnClick());
         prevButton = findViewById(R.id.prevButton);
         prevButton.setOnClickListener(new prevBtnClick());
+
         songTitleText = findViewById(R.id.songTitleTextView);
         albumArtImage = findViewById(R.id.albumArtImageView);
         connectBtn = findViewById(R.id.connect_button);
         disconnectBtn = findViewById(R.id.disconnect_button);
+        findViewById(R.id.backImgBtn)
+                .setOnClickListener(new backClick());
 
 
 
@@ -185,8 +213,6 @@ public class AudioPlayerActivity extends AppCompatActivity {
                                 .getPlayerApi()
                                 .subscribeToPlayerState()
                                 .setEventCallback(mPlayerStateEventCallback);
-
-
     }
 
 
@@ -313,4 +339,10 @@ public class AudioPlayerActivity extends AppCompatActivity {
     }
 
 
+    private class backClick implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            finish();
+        }
+    }
 }
